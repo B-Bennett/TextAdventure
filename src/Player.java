@@ -47,7 +47,7 @@ public class Player {
     void findItem(String item) {
         System.out.println("Found item! Pick it up? [y/n]");
         String s = Game.nextLine();
-        if s.equals("y")) {
+        if (s.equals("y")) {
             System.out.println("Your found a  " + item);
             items.add(item);
         }
