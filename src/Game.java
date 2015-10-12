@@ -6,18 +6,19 @@ import java.util.Scanner;
  */
 public class Game {
     static Player player;
+
     public static void main(String [] args) throws Exception {
         System.out.println("Welcome to my text adventure.");
         player = new Player();
 
     while (true) {
-
         player.chooseName();
         player.chooseWeapon();
         player.chooseArea();
         player.findItem("Shield");
         }
     }
+
     static String nextLine() {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
