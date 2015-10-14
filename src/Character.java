@@ -24,4 +24,20 @@ public class Character {
             System.out.println(String.format(deadMessage, opponent.name));
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
 }
