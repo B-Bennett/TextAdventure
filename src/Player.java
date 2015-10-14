@@ -1,10 +1,10 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by BennettIronYard on 10/9/15.
  */
 public class Player extends Character {
-    Weapon weapon;
     String area;
     ArrayList items = new ArrayList();
 
@@ -22,21 +22,24 @@ public class Player extends Character {
     void chooseWeapon() throws Exception {
         System.out.println("[1] Pick up a sword");
         System.out.println("[2] pick up a mallet");
-        String choice = Game.nextLine();
-        int choiceNum = Integer.valueOf(weapon);
-        if (choiceNum == 1) {
-            System.out.println("That's a fine sword!");
-            
-        } else if (choiceNum == 2) {
-            System.out.println("That's a heavy mallet");
+        int weaponNum = Integer.valueOf(Game.nextLine());
+        if (weaponNum == 1) {
+            weapon = new Weapon();
+            weapon.name = "Sword";
+            weapon.damage = 10;
+        } else if (weaponNum == 2) {
+            weapon = new Weapon();
+            weapon.name = "Mallet";
+            weapon.damage = 10;
         } else {
-            throw new Exception("Invald weapon.");
+            throw new Exception("Invalid weapon.");
         }
+        System.out.println(String.format("That's a fine %s1!", weapon.name.toLowerCase()));
     }
 
     void chooseArea () throws Exception {
         System.out.println("[1] Enter the Forest");
-        System.out.println("[2] Enter the Underground tunnel");
+        System.out.println("[2]Enter the Underground tunnel");
         area = Game.nextLine();
         int areaNum = Integer.valueOf(area);
         if (areaNum == 1) {
