@@ -23,13 +23,16 @@ public class Game {
             player.chooseName();
             player.chooseWeapon();
             player.chooseArea();
-            player.findItem("Shield");
+
         }
+        player.findItem("Shield");
+        player.findItem("Boots");
 
         Weapon ogreWeapon = new Weapon();
         ogreWeapon.name = "Club";
         ogreWeapon.damage = 5;
         Enemy ogre = new Enemy("Ogre", 50, 5, ogreWeapon);
+
         player.battle(ogre);
 
         saveGame();
@@ -48,7 +51,7 @@ public class Game {
                 if (player.items.size() == 0) {
                     System.out.println("You have no items");
                 }
-                for (Object item : player.items) {
+                for (String item : player.items) {
                     System.out.println(item);
                 }
             }
